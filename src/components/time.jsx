@@ -5,7 +5,7 @@ class Time extends Component {
       timing: ['']
     }
   
-    handleText = i => e => {
+    handleChange = i => e => {
       let timing = [...this.state.timing]
       timing[i] = e.target.value
       this.setState({
@@ -15,7 +15,7 @@ class Time extends Component {
     }
   
     handleDelete = i => e => {
-      e.preventDefault()
+    //   e.preventDefault()
       let timing = [
         ...this.state.timing.slice(0, i),
         ...this.state.timing.slice(i + 1)
@@ -26,7 +26,7 @@ class Time extends Component {
     }
   
     addField = e => {
-      e.preventDefault()
+    //   e.preventDefault()
       let timing = this.state.timing.concat([''])
       this.setState({
         timing
@@ -50,12 +50,12 @@ class Time extends Component {
             <span key={index} style={myBox}>
               <input
                 type="text"
-                onChange={this.handleText(index)}
+                onChange={this.handleChange(index)}
                 value={timing}
               />
               <input
                 type="text"
-                onChange={this.handleText(index)}
+                onChange={this.handleChange(index)}
                 value={timing}
               />
               <button style={newField} onClick={this.handleDelete(index)}>Delete</button><br/>
@@ -67,12 +67,12 @@ class Time extends Component {
             <span key={index} style={myBox}>
               <input
                 type="text"
-                onChange={this.handleText(index)}
+                onChange={this.handleChange(index)}
                 value={timing}
               />
               <input
                 type="text"
-                onChange={this.handleText(index)}
+                onChange={this.handleChange(index)}
                 value={timing}
               />
               <button style={newField} onClick={this.handleDelete(index)}>Delete</button><br/>
@@ -84,12 +84,12 @@ class Time extends Component {
             <span key={index} style={myBox}>
               <input
                 type="text"
-                onChange={this.handleText(index)}
+                onChange={this.handleChange(index)}
                 value={timing}
               />
               <input
                 type="text"
-                onChange={this.handleText(index)}
+                onChange={this.handleChange(index)}
                 value={timing}
               />
               <button style={newField} onClick={this.handleDelete(index)}>Delete</button><br/>
@@ -101,12 +101,12 @@ class Time extends Component {
             <span key={index} style={myBox}>
               <input
                 type="text"
-                onChange={this.handleText(index)}
+                onChange={this.handleChange(index)}
                 value={timing}
               />
               <input
                 type="text"
-                onChange={this.handleText(index)}
+                onChange={this.handleChange(index)}
                 value={timing}
               />
               <button style={newField} onClick={this.handleDelete(index)}>Delete</button><br/>
@@ -118,12 +118,12 @@ class Time extends Component {
             <span key={index} style={myBox}>
               <input
                 type="text"
-                onChange={this.handleText(index)}
+                onChange={this.handleChange(index)}
                 value={timing}
               />
               <input
                 type="text"
-                onChange={this.handleText(index)}
+                onChange={this.handleChange(index)}
                 value={timing}
               />
               <button style={newField} onClick={this.handleDelete(index)}>delete</button><br/>
@@ -135,12 +135,12 @@ class Time extends Component {
             <span key={index} style={myBox}>
               <input
                 type="text"
-                onChange={this.handleText(index)}
+                onChange={this.handleChange(index)}
                 value={timing}
               />
               <input
                 type="text"
-                onChange={this.handleText(index)}
+                onChange={this.handleChange(index)}
                 value={timing}
               />
               <button style={newField} onClick={this.handleDelete(index)}>Delete</button><br/>
@@ -152,19 +152,18 @@ class Time extends Component {
             <span key={index} style={myBox}>
               <input
                 type="text"
-                onChange={this.handleText(index)}
+                onChange={this.handleChange(index)}
                 value={timing}
               />
               <input
                 type="text"
-                onChange={this.handleText(index)}
+                onChange={this.handleChange(index)}
                 value={timing}
               />
-              <button style={newField} onClick={this.handleDelete(index)}>Delete</button><br/>
-              <hr />
-              <button style={newField} type="submit">Save</button>
+              <button style={newField} onClick={this.handleDelete(index)}>Delete</button><br/><br/>
             </span>
-          ))}
+            ))}
+            <button style={newField} type="submit">Save</button>
           
         </React.Fragment>
       )
