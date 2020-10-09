@@ -88,9 +88,34 @@ class Timings extends Component{
     }
 
     handleDelete(e,index){
+        console.log(e.target.value)
         if(e.target.value==="mon"){
         this.state.monday.splice(index,1);
         this.setState({monday: this.state.monday})
+        }
+        else if(e.target.value==="tues"){
+            this.state.tuesday.splice(index,1);
+            this.setState({tuesday: this.state.tuesday})
+        }
+        else if(e.target.value==="wed"){
+            this.state.wednesday.splice(index,1);
+            this.setState({wednesday: this.state.wednesday})
+        }
+        else if(e.target.value==="thrus"){
+            this.state.thrusday.splice(index,1);
+            this.setState({thrusday: this.state.thrusday})
+        }
+        else if(e.target.value==="fri"){
+            this.state.friday.splice(index,1);
+            this.setState({friday: this.state.friday})
+        }
+        else if(e.target.value==="sat"){
+            this.state.saturday.splice(index,1);
+            this.setState({saturday: this.state.saturday})
+        }
+        else if(e.target.value==="sun"){
+            this.state.sunday.splice(index,1);
+            this.setState({sunday: this.state.sunday})
         }
     }
 
@@ -99,7 +124,7 @@ class Timings extends Component{
             margin:"20px 50px"
         }
         return(
-            <React.Fragment style={{margin:"20px 50px"}}>
+            <React.Fragment>
                 <h1 style={myStyle}>Edit Doctor Timings</h1>
                 <hr />
                 <h2 style={myStyle}>Monday&nbsp;&nbsp;
@@ -110,7 +135,7 @@ class Timings extends Component{
                             <div style={myStyle} key={index} >
                                 <input value={item.from} />
                                 <input value={item.to} />
-                                <button onClick={(e)=> this.handleDelete(e,index)}>Delete</button>
+                                <button value="mon" onClick={(e)=> this.handleDelete(e,index)}>Delete</button>
                             </div>
                         )
                     })
@@ -120,11 +145,12 @@ class Timings extends Component{
                 <button value="tues" onClick={(e)=>this.handleAdd(e)}>Add</button><hr/><br/></h2>
                 {
                     this.state.tuesday.map((item,index)=>{
+                        // console.log("Tues:",item,index)
                         return(
                             <div style={myStyle} key={index}>
                                 <input value={item.from} />
                                 <input value={item.to} />
-                                <button onClick={()=> this.handleDelete(index)}>Delete</button>
+                                <button value="tues" onClick={()=> this.handleDelete(index)}>Delete</button>
                             </div>
                         )
                     })
@@ -138,7 +164,7 @@ class Timings extends Component{
                             <div style={myStyle} key={index}>
                                 <input value={item.from} />
                                 <input value={item.to} />
-                                <button onClick={()=> this.handleDelete(index)}>Delete</button>
+                                <button value="wed" onClick={()=> this.handleDelete(index)}>Delete</button>
                             </div>
                         )
                     })
@@ -152,7 +178,7 @@ class Timings extends Component{
                             <div style={myStyle} key={index}>
                                 <input value={item.from} />
                                 <input value={item.to} />
-                                <button onClick={()=> this.handleDelete(index)}>Delete</button>
+                                <button value="thrus" onClick={()=> this.handleDelete(index)}>Delete</button>
                             </div>
                         )
                     })
@@ -166,7 +192,7 @@ class Timings extends Component{
                             <div style={myStyle} key={index}>
                                 <input value={item.from} />
                                 <input value={item.to} />
-                                <button onClick={()=> this.handleDelete(index)}>Delete</button>
+                                <button value="fri" onClick={()=> this.handleDelete(index)}>Delete</button>
                             </div>
                         )
                     })
@@ -180,7 +206,7 @@ class Timings extends Component{
                             <div style={myStyle} key={index}>
                                 <input value={item.from} />
                                 <input value={item.to} />
-                                <button onClick={()=> this.handleDelete(index)}>Delete</button>
+                                <button value="sat" onClick={()=> this.handleDelete(index)}>Delete</button>
                             </div>
                         )
                     })
@@ -194,7 +220,7 @@ class Timings extends Component{
                             <div style={myStyle} key={index}>
                                 <input value={item.from} />
                                 <input value={item.to} />
-                                <button onClick={()=> this.handleDelete(index)}>Delete</button>
+                                <button value="sun" onClick={()=> this.handleDelete(index)}>Delete</button>
                             </div>
                         )
                     })
