@@ -143,6 +143,7 @@ class Timings extends Component{
 
     handleSubmit(e){
         e.preventDefault();
+        alert("Form Saved Successfully!! Check console for timings")
         console.log("Saving and Displaying Data :");
         this.state.monday.forEach((item)=>{
             console.log(`Monday:- From:${item.from} -- To:${item.to}`)
