@@ -9,7 +9,7 @@ class Timings extends Component{
             monday:[],
             tuesday:[],
             wednesday:[],
-            thrusday:[],
+            thursday:[],
             friday:[],
             saturday:[],
             sunday:[],
@@ -42,7 +42,7 @@ class Timings extends Component{
                 }
                 else if(item.day==="Thursday"){
                     this.setState({
-                        thrusday: this.state.thrusday.concat(item) 
+                        thursday: this.state.thursday.concat(item) 
                     })
                 }
                 else if(item.day==="Friday"){
@@ -76,8 +76,8 @@ class Timings extends Component{
         if(e.target.value==="wed"){
             this.setState({wednesday:[...this.state.wednesday,""]})
         }
-        if(e.target.value==="thrus"){
-            this.setState({thrusday:[...this.state.thrusday,""]})
+        if(e.target.value==="thurs"){
+            this.setState({thursday:[...this.state.thursday,""]})
         }
         if(e.target.value==="fri"){
             this.setState({friday:[...this.state.friday,""]})
@@ -104,9 +104,9 @@ class Timings extends Component{
             this.state.wednesday.splice(index,1);
             this.setState({wednesday: this.state.wednesday})
         }
-        else if(e==="thrus"){
-            this.state.thrusday.splice(index,1);
-            this.setState({thrusday: this.state.thrusday})
+        else if(e==="thurs"){
+            this.state.thursday.splice(index,1);
+            this.setState({thursday: this.state.thursday})
         }
         else if(e==="fri"){
             this.state.friday.splice(index,1);
@@ -153,8 +153,8 @@ class Timings extends Component{
         this.state.wednesday.forEach((item)=>{
             console.log(`Wednesday:- From:${item.from} -- To:${item.to}`)
         })
-        this.state.thrusday.forEach((item)=>{
-            console.log(`Thrusday:- From:${item.from} -- To:${item.to}`)
+        this.state.thursday.forEach((item)=>{
+            console.log(`Thursday:- From:${item.from} -- To:${item.to}`)
         })
         this.state.friday.forEach((item)=>{
             console.log(`Friday:- From:${item.from} -- To:${item.to}`)
@@ -223,15 +223,15 @@ class Timings extends Component{
                     })
                 }
                 <hr />
-                <h2 style={myStyle}>Thrusday&nbsp;&nbsp;
-                <button value="thrus" onClick={(e)=>this.handleAdd(e)}>Add</button><hr/><br/></h2>
+                <h2 style={myStyle}>Thursday&nbsp;&nbsp;
+                <button value="thurs" onClick={(e)=>this.handleAdd(e)}>Add</button><hr/><br/></h2>
                 {
-                    this.state.thrusday.map((item,index)=>{
+                    this.state.thursday.map((item,index)=>{
                         return(
                             <div style={myStyle} key={index}>
                                 <input value={this.handleFrom(item.from)} />
                                 <input value={this.handleTo(item.to)} />
-                                <button onClick={()=> this.handleDelete("thrus",index)}>Delete</button>
+                                <button onClick={()=> this.handleDelete("thurs",index)}>Delete</button>
                             </div>
                         )
                     })
