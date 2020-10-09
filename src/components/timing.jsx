@@ -88,32 +88,32 @@ class Timings extends Component{
     }
 
     handleDelete(e,index){
-        console.log(e.target.value)
-        if(e.target.value==="mon"){
+        // console.log(e)
+        if(e==="mon"){
         this.state.monday.splice(index,1);
         this.setState({monday: this.state.monday})
         }
-        else if(e.target.value==="tues"){
+        else if(e==="tues"){
             this.state.tuesday.splice(index,1);
             this.setState({tuesday: this.state.tuesday})
         }
-        else if(e.target.value==="wed"){
+        else if(e==="wed"){
             this.state.wednesday.splice(index,1);
             this.setState({wednesday: this.state.wednesday})
         }
-        else if(e.target.value==="thrus"){
+        else if(e==="thrus"){
             this.state.thrusday.splice(index,1);
             this.setState({thrusday: this.state.thrusday})
         }
-        else if(e.target.value==="fri"){
+        else if(e==="fri"){
             this.state.friday.splice(index,1);
             this.setState({friday: this.state.friday})
         }
-        else if(e.target.value==="sat"){
+        else if(e==="sat"){
             this.state.saturday.splice(index,1);
             this.setState({saturday: this.state.saturday})
         }
-        else if(e.target.value==="sun"){
+        else if(e==="sun"){
             this.state.sunday.splice(index,1);
             this.setState({sunday: this.state.sunday})
         }
@@ -135,7 +135,7 @@ class Timings extends Component{
                             <div style={myStyle} key={index} >
                                 <input value={item.from} />
                                 <input value={item.to} />
-                                <button value="mon" onClick={(e)=> this.handleDelete(e,index)}>Delete</button>
+                                <button onClick={(e)=> this.handleDelete("mon",index)}>Delete</button>
                             </div>
                         )
                     })
@@ -150,7 +150,7 @@ class Timings extends Component{
                             <div style={myStyle} key={index}>
                                 <input value={item.from} />
                                 <input value={item.to} />
-                                <button value="tues" onClick={()=> this.handleDelete(index)}>Delete</button>
+                                <button onClick={()=> this.handleDelete("tues",index)}>Delete</button>
                             </div>
                         )
                     })
@@ -164,7 +164,7 @@ class Timings extends Component{
                             <div style={myStyle} key={index}>
                                 <input value={item.from} />
                                 <input value={item.to} />
-                                <button value="wed" onClick={()=> this.handleDelete(index)}>Delete</button>
+                                <button onClick={()=> this.handleDelete("wed",index)}>Delete</button>
                             </div>
                         )
                     })
@@ -178,7 +178,7 @@ class Timings extends Component{
                             <div style={myStyle} key={index}>
                                 <input value={item.from} />
                                 <input value={item.to} />
-                                <button value="thrus" onClick={()=> this.handleDelete(index)}>Delete</button>
+                                <button onClick={()=> this.handleDelete("thrus",index)}>Delete</button>
                             </div>
                         )
                     })
@@ -192,7 +192,7 @@ class Timings extends Component{
                             <div style={myStyle} key={index}>
                                 <input value={item.from} />
                                 <input value={item.to} />
-                                <button value="fri" onClick={()=> this.handleDelete(index)}>Delete</button>
+                                <button onClick={()=> this.handleDelete("fri",index)}>Delete</button>
                             </div>
                         )
                     })
@@ -206,7 +206,7 @@ class Timings extends Component{
                             <div style={myStyle} key={index}>
                                 <input value={item.from} />
                                 <input value={item.to} />
-                                <button value="sat" onClick={()=> this.handleDelete(index)}>Delete</button>
+                                <button onClick={()=> this.handleDelete("sat",index)}>Delete</button>
                             </div>
                         )
                     })
@@ -220,7 +220,7 @@ class Timings extends Component{
                             <div style={myStyle} key={index}>
                                 <input value={item.from} />
                                 <input value={item.to} />
-                                <button value="sun" onClick={()=> this.handleDelete(index)}>Delete</button>
+                                <button onClick={()=> this.handleDelete("sun",index)}>Delete</button>
                             </div>
                         )
                     })
