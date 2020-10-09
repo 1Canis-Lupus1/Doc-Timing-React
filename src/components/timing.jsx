@@ -15,6 +15,7 @@ class Timings extends Component{
             sunday:[],
             errors:{}
         }
+        this.handleSubmit=this.handleSubmit.bind(this);
     }
 
     componentDidMount(){
@@ -140,8 +141,34 @@ class Timings extends Component{
     }
 
 
-    handleSubmit(){
-        console.log("Saving and Displaying Data")
+    handleSubmit(e){
+        e.preventDefault();
+        console.log("Saving and Displaying Data :");
+        this.state.monday.forEach((item)=>{
+            console.log(`Monday:- From:${item.from} -- To:${item.to}`)
+        })
+        this.state.tuesday.forEach((item)=>{
+            console.log(`Tuesday:- From:${item.from} -- To:${item.to}`)
+        })
+        this.state.wednesday.forEach((item)=>{
+            console.log(`Wednesday:- From:${item.from} -- To:${item.to}`)
+        })
+        this.state.thrusday.forEach((item)=>{
+            console.log(`Thrusday:- From:${item.from} -- To:${item.to}`)
+        })
+        this.state.friday.forEach((item)=>{
+            console.log(`Friday:- From:${item.from} -- To:${item.to}`)
+        })
+        this.state.saturday.forEach((item)=>{
+            console.log(`Saturday:- From:${item.from} -- To:${item.to}`)
+        })
+        this.state.sunday.forEach((item)=>{
+            console.log(`Sunday:- From:${item.from} -- To:${item.to}`)
+        })
+        this.state.monday.forEach((item)=>{
+            console.log(`Monday:- From:${item.from} -- To:${item.to}`)
+        })
+
     }
 
     render(){
@@ -152,6 +179,7 @@ class Timings extends Component{
             <React.Fragment>
                 <h1 style={myStyle}>Edit Doctor Timings</h1>
                 <hr />
+                <form onSubmit={this.handleSubmit}>
                 <h2 style={myStyle}>Monday&nbsp;&nbsp;
                 <button value="mon" onClick={(e)=>this.handleAdd(e)}>Add</button><hr/><br/></h2>
                 {
@@ -251,7 +279,8 @@ class Timings extends Component{
                     })
                 }
                 <hr /><hr/>
-                <button style={myStyle} onClick={this.handleSubmit}>Save Timings</button>
+                <button style={myStyle} type="submit">Save Timings</button>
+                </form>
             </React.Fragment>
         )
     }
